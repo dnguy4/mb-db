@@ -4,3 +4,6 @@ unsorted/
 venv/
 .venv/
 .vscode/
+output/
+
+*.pyc
