@@ -9,10 +9,30 @@ PLUGINS = ["i18n_subsites", "search"]
 JINJA_ENVIRONMENT = {
     "extensions": ["jinja2.ext.i18n"],
 }
+JINJA_GLOBALS = {
+    "card_types": [
+        "Core",
+        "Starter",
+        "Expansion",
+        "Premium",
+        "Master",
+        "Bronze Promo",
+        "Silver Promo",
+        "Gold Promo",
+        "Meta",
+        "NPC",
+        "Pro Player",
+        "Character",
+        "Character (Co-Op)",
+        "Character Expansion",
+        "Co-Op Boss",
+        "Event",
+    ],
+}
 
 PATH = "content"
 PAGE_PATHS = ["pages"]
-STATIC_PATHS = ["cards"]
+STATIC_PATHS = ["cards", "images"]
 
 TIMEZONE = "America/Belize"
 

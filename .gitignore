@@ -7,3 +7,5 @@ venv/
 output/
 
 *.pyc
+content/sets/
+content/cards/
