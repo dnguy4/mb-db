@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{card_name}}</title>
+    <meta name="date" content="2010-12-03 10:20" />
+    <meta name="category" content="{{source}}" />
+    <meta
+      name="tags"
+      content="{{source}}, {{card_type}}, {{set}}, {{star}} Star, {{elemnt}}, {{type}}"
+    />
+    <meta name="summary" content="{{card_text}}" />
+  </head>
+  <body>
+    <article
+      class="container border border-4 border-dark rounded-2 px-4 py-2 bg-light"
+    >
+      <div class="row">
+        <h1 class="bg-warning bg-gradient text-center fw-bold">
+          {{card_name}}
+        </h1>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <img class="img-fluid" src="{{image_path}}" alt="Card Image" />
+        </div>
+
+        <div class="col-6">
+          <table class="table table-bordered">
+            <tr>
+              <td>Source</td>
+              <td>{{source}}</td>
+            </tr>
+            <tr>
+              <td>Set</td>
+              <td>{{set}}</td>
+            </tr>
+            <tr>
+              <td>Cost</td>
+              <td>${{cost}}</td>
+            </tr>
+            <tr>
+              <td>Card Type</td>
+              <td>{{card_type}}</td>
+            </tr>
+            <tr>
+              <td>Quantity</td>
+              <td>{{quantity}}</td>
+            </tr>
+            <tr>
+              <td>Star Rating</td>
+              <td>{{star}}⭐</td>
+            </tr>
+            <tr>
+              <td>Element</td>
+              <td>{{element or ''}}</td>
+            </tr>
+            <tr>
+              <td>Type</td>
+              <td>{{type or ''}}</td>
+            </tr>
+            <tr class="table-warning table-active">
+              <td colspan="2">{{card_text}}</td>
+            </tr>
+            <tr>
+              <td>Source Symbol</td>
+              <td>{{source_symbol}}</td>
+            </tr>
+            <tr>
+              <td>References</td>
+              <td>{{references or ''}}</td>
+            </tr>
+            <tr>
+              <td>Comments & Errata</td>
+              <td>{{comments_and_errata or ''}}</td>
+            </tr>
+            <tr>
+              <td>Copyright</td>
+              <td>{{copyright}}</td>
+            </tr>
+            <tr>
+              <td>Count</td>
+              <td>{{count}}</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </article>
+  </body>
+</html>

@@ -1,4 +1,5 @@
 from collections import defaultdict
+import os
 import sqlite3 as sq
 from jinja2 import Environment, FileSystemLoader
 
@@ -7,7 +8,28 @@ from contextlib import closing
 
 environment = Environment(loader=FileSystemLoader("page_templates/"))
 set_template = environment.get_template("sets.html")
-set_index_template = environment.get_template("sets_index.html")
+card_template = environment.get_template("card_template.html")
+
+
+ALL_SETS_SOURCES = [
+    "Base",
+    "Set Rotation",
+    "Collusion",
+    "Mini Expansion #1 (Crossover)",
+    "Mini Expansion #2 (Sponsors)",
+    "Mini Expansion #3 (Fusion Chaos)",
+    "Mini Expansion #4 (Final Bosses)",
+    "Mini Expansion #5 (Futures)",
+    "Mini Expansion #6 (Professionals)",
+    "Mini Expansion #7 (Crossovers 2)",
+    "Mini Expansion #8 (Crossovers 3)",
+    "Mini Expansion #9 (Co-Op Bosses)",
+    "Mini Expansion #10 (Extra Characters)",
+    "Mini Expansion #11 (Extra Sets)",
+    "Mini Expansion #12 (Finaler Bosses)",
+    "Mini Expansion BGG (BoardGameGeek)",
+    "The Dice Tower Promo",
+]
 
 
 def get_card_types(conn) -> list[str]:
@@ -44,25 +66,8 @@ def get_card_types(conn) -> list[str]:
     ]
 
 
-ALL_SETS_SOURCES = [
-    "Base",
-    "Set Rotation",
-    "Collusion",
-    "Mini Expansion #1 (Crossover)",
-    "Mini Expansion #2 (Sponsors)",
-    "Mini Expansion #3 (Fusion Chaos)",
-    "Mini Expansion #4 (Final Bosses)",
-    "Mini Expansion #5 (Futures)",
-    "Mini Expansion #6 (Professionals)",
-    "Mini Expansion #7 (Crossovers 2)",
-    "Mini Expansion #8 (Crossovers 3)",
-    "Mini Expansion #9 (Co-Op Bosses)",
-    "Mini Expansion #10 (Extra Characters)",
-    "Mini Expansion #11 (Extra Sets)",
-    "Mini Expansion #12 (Finaler Bosses)",
-    "Mini Expansion BGG (BoardGameGeek)",
-    "The Dice Tower Promo",
-]
+def normalize_str(s: str) -> str:
+    return s.lower().replace(" ", "_").replace("#", "")
 
 
 def make_set_pages(conn, card_types):
@@ -79,7 +84,7 @@ def make_set_pages(conn, card_types):
 
         set_dict = defaultdict(list)
         for source, set_name in rows:
-            set_normalized = set_name.lower().replace(" ", "_")
+            set_normalized = normalize_str(set_name)
             set_dict[source].append((set_name, set_normalized))
 
         if card_type == "Core":
@@ -89,23 +94,32 @@ def make_set_pages(conn, card_types):
         with open(f"content/sets/{card_type}.html", "w") as fp:
             fp.write(content)
 
-    with open("content/pages/sets.html", "w") as fp:
-        content = set_index_template.render(card_types=card_types)
-        fp.write(content)
+
+def make_card_pages(conn):
+    conn.row_factory = sq.Row
+    rows = conn.execute(
+        """
+        SELECT *
+        FROM card_list
+        """
+    ).fetchall()
+    for row in rows:
+        card_dict = dict(row)
+        src, card_type = (
+            normalize_str(card_dict["source"]),
+            normalize_str(card_dict["card_type"]),
+        )
+        card_name = normalize_str(card_dict["card_name"])
+        image_path = f"/images/{src}/{card_type}/{card_name}.webp"
+
+        file_path = f"content/cards/{card_type}/"
+        os.makedirs(file_path, exist_ok=True)
+        with open(f"{file_path}/{card_name}.html", "w") as fp:
+            fp.write(card_template.render(**card_dict, image_path=image_path))
 
 
 if __name__ == "__main__":
     with closing(sq.connect("card_list.sqlite")) as conn:
         card_types = get_card_types(conn)
-
-        # param_lst = ", ".join("?" for _ in card_types)
-        # rows = conn.execute(
-        #     f"""
-        #     SELECT DISTINCT card_type, source, divider
-        #     FROM card_list
-        #     WHERE card_type IN ({param_lst})
-        #     ORDER BY card_type, source, divider
-        #     """,
-        #     card_types,
-        # ).fetchall()
-        make_set_pages(conn, card_types)
+        # make_set_pages(conn, card_types)
+        make_card_pages(conn)

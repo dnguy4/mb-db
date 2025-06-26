@@ -62,3 +62,10 @@ DISPLAY_CATEGORIES_ON_MENU = True
 
 # RELATIVE_URLS = True
 THEME = "./pelican-fh5co-marble"
+
+# https://github.com/getpelican/pelican/issues/686#issuecomment-48603981
+PATH_METADATA = "(?P<path_no_ext>.*)\..*"
+PAGE_SAVE_AS = "{path_no_ext}.html"
+PAGE_URL = "{path_no_ext}.html"
+
+STATIC_SAVE_AS = "{path}"
