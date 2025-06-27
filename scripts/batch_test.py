@@ -181,7 +181,7 @@ def batch_process_images(directory_path, name_list, batch_size=32):
 
 
 def normalize_str(s: str):
-    return s.lower().replace(" ", "_")
+    return s.lower().replace(" ", "_").replace("#", "")
 
 
 if __name__ == "__main__":
