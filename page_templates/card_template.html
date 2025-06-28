@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>{{card_name}}</title>
+    <title>{{card_name}} ({{card_type}} {{source}})</title>
     <meta name="date" content="2010-12-03 10:20" />
     <meta name="category" content="{{source}}" />
     <meta
       name="tags"
-      content="{{source}}, {{card_type}}, {{set}}, {{star}} Star, {{elemnt}}, {{type}}"
+      content="{{source}}, {{card_type}}, {{set}}, {{star}} Star{{(', ' + element) if element|length > 1 else ''}} {{(', ' + type) if type|length > 1 else ''}}"
     />
     <meta name="summary" content="{{card_text}}" />
+    <meta name="image" content="{{image_path}}" />
   </head>
   <body>
     <article
@@ -21,7 +22,7 @@
       </div>
       <div class="row">
         <div class="col-md-6">
-          <img class="img-fluid" src="{{image_path}}" alt="Card Image" />
+          <img class="img-fluid" src="{{image_path}}" alt="Missing Card Image of {{card_name}}" />
         </div>
 
         <div class="col-6">

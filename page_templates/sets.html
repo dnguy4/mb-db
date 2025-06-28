@@ -8,12 +8,13 @@
   </head>
   <body>
     <div class="fh5co-narrow-content">
-      {% for source, value in set_dict %} {% if value|length > 0 %}
+      {% for source, value in set_dict %}
+      {% if value|length > 0 %}
       <div>
         <h1>{{ source }}</h1>
         {% for set, set_normalized in value %}
         <a
-          href="{{ SITEURL }}/{{ set_normalized }}.html"
+          href="{{ SITEURL }}/tag/{{ set_normalized }}.html"
           class="overview-link col-md-6"
         >
           <div class="wrapper">
@@ -27,7 +28,8 @@
         </a>
         {% endfor %}
       </div>
-      {% endif %} {% endfor %}
+      {% endif %}
+      {% endfor %}
     </div>
   </body>
 </html>
