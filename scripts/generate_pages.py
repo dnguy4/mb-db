@@ -10,6 +10,8 @@ environment = Environment(loader=FileSystemLoader("page_templates/"))
 set_template = environment.get_template("sets.html")
 card_template = environment.get_template("card_template.html")
 
+SITEURL = "https://dnguy4.github.io/mb-db"
+
 
 ALL_SETS_SOURCES = [
     "Base",
@@ -98,7 +100,7 @@ def make_set_pages(conn, card_types):
         if card_type == "Core":
             set_dict = {"Core Sets:": set_dict["Base"]}
         sets = list(set_dict.items())
-        content = set_template.render(set_dict=sets, card_type=card_type)
+        content = set_template.render(set_dict=sets, card_type=card_type, SITEURL=SITEURL)
         with open(f"content/sets/{normalize_str(card_type)}.html", "w") as fp:
             fp.write(content)
 
@@ -122,7 +124,9 @@ def make_card_pages(conn):
         if not os.path.exists(f"content{image_path}"):
             paths = glob.glob(f"content/images/**/{card_type}/{card_name}.webp")
             if paths:
-                image_path = paths[0]
+                image_path = paths[0][7:] # Trim to the /images part
+        if SITEURL:
+            image_path = f"{SITEURL}{image_path}"
 
         file_path = f"content/cards/{card_type}/"
         os.makedirs(file_path, exist_ok=True)
