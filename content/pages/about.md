@@ -12,4 +12,4 @@ You begin the game on pre-release night with just your starter deck. You’ll op
 
 This website is a wiki for the cards within Millennium Blades. Most of the singles from the game should be here. This includes the Set Rotation, Decked Out, and Collusion/Draw Power expansions. The images were taken from the Tabletop Simulator mod. The descriptions were taken from the Card List spreadsheet by the user MrKarato from the Level 99 Games [Discord](https://discord.com/invite/4u4Y6Hr). Many thanks to the community for these assets!
 
-If you notice a missing card or low quality image, please let me know by opening a GitHub issue or messaging the user SouPig within the official Level 99 Games Discord. The wiki is an unofficial fan-work, and is not endorsed or approved by Level 99 Games.
+If you notice a missing card or low quality image, please let me know by opening a GitHub [issue](https://github.com/dnguy4/mb-db/issues). The wiki is an unofficial fan-work, and is not endorsed or approved by Level 99 Games.

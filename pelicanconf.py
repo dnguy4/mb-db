@@ -100,7 +100,7 @@ LINKS = (
 )
 
 # Social widget
-SOCIAL = (("Github", "https://www.github.com/dnguy4"),)
+SOCIAL = (("Github", "https://www.github.com/dnguy4/mb-db"),)
 
 DEFAULT_PAGINATION = False
 DISPLAY_PAGES_ON_MENU = True
