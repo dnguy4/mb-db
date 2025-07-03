@@ -123,6 +123,8 @@ def make_card_pages(conn):
         image_path = f"/images/{src}/{card_type}/{card_name}.webp"
         if not os.path.exists(f"content{image_path}"):
             paths = glob.glob(f"content/images/**/{card_type}/{card_name}.webp")
+            if paths == []:
+                paths = glob.glob(f"content/images/**/**/{card_name}.webp")
             if paths:
                 image_path = paths[0][7:] # Trim to the /images part
         if SITEURL:
