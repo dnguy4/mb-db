@@ -77,6 +77,20 @@ JINJA_GLOBALS = {
         ),
         ("The Dice Tower Promo", "category/the-dice-tower-promo.html"),
     ],
+    "base_sets": [
+        "Bluelake Village",
+        "Brownwall City",
+        "Chateau Helbane",
+        "Greendew Bazaar",
+        "Redhill Mercenaries",
+        "Saints of Whiteholme",
+        "Animal Farm",
+        "Future Perfect",
+        "Gods and Myths",
+        "Megalopolis",
+        "The Academy",
+        "The Great War",
+    ],
 }
 
 PATH = "content"
@@ -123,3 +137,5 @@ STATIC_URL = "{path_no_ext}.html"
 
 # Modify stork search? Slow when things are in separate folders
 STORK_INPUT_OPTIONS = {"title_boost": "Large"}
+
+DIRECT_TEMPLATES = ["index", "tags", "categories"]
