@@ -5,6 +5,7 @@ description = "Millenium blades wiki"
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
+    "ghp-import>=2.1.0",
     "joblib>=1.5.1",
     "keras-ocr>=0.9.3",
     "openpyxl>=3.1.5",
