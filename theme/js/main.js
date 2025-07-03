@@ -197,8 +197,8 @@
 	$(function(){
 		fullHeight();
 		contentWayPoint();
-		burgerMenu();
-		mobileMenuOutsideClick();
+		// burgerMenu();
+		// mobileMenuOutsideClick();
 		sliderMain();
 		handleForm();
 	});

@@ -77,18 +77,49 @@
     />
    </head>
   <body>
-    <div id="fh5co-page">
-      <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
-      <aside id="fh5co-aside" role="complementary" class="border js-fullheight">
-        <nav class="fh5co-main-menu" role="navigation">
-        </nav>
-        <div class="clearfix"></div>
-        <h1 id="fh5co-logo">
-          <a href="https://dnguy4.github.io/mb-db/index.html">
-            <img src="https://dnguy4.github.io/mb-db/images/logo.png" />
-          </a>
-        </h1>
-        <nav class="fh5co-main-menu" role="navigation">
+    <nav class="navbar navbar-light sticky-top d-md-block">
+      <div class="container-fluid">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#fh5co-aside"
+          aria-controls="fh5co-aside"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </nav>
+    <div id="fh5co-page" class="d-flex flex-column min-vh-100">
+
+      <!-- Offcanvas sidebar -->
+      <aside
+        id="fh5co-aside"
+        class="offcanvas offcanvas-start"
+        tabindex="-1"
+        aria-labelledby="fh5co-logo"
+        role="complementary"
+      >
+        <!-- Offcanvas header only on mobile -->
+        <div class="offcanvas-header d-md-none">
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="offcanvas"
+            aria-label="Close"
+          ></button>
+        </div>
+
+        <div class="offcanvas-body sidebar-scrollable">
+          <nav class="fh5co-main-menu" role="navigation">
+          </nav>
+          <div class="clearfix"></div>
+          <h1 id="fh5co-logo">
+            <a href="https://dnguy4.github.io/mb-db/index.html">
+              <img src="https://dnguy4.github.io/mb-db/images/logo.png" />
+            </a>
+          </h1>
+          <nav class="fh5co-main-menu" role="navigation">
 <ul>
   <li>
     <div class="form-inline px-1">
@@ -110,10 +141,10 @@
     <li class="fh5co-active"><a href="https://dnguy4.github.io/mb-db/">Home</a></li>
 
     <!-- page links -->
-            <li><a href="https://dnguy4.github.io/mb-db/pages/about.html">About Millennium Blades</a></li>
+            <li><a href="https://dnguy4.github.io/mb-db/pages/about.html">About</a></li>
 
     <!-- set types -->
-    <li class="nav-title dropdown">
+    <li class="nav-title dropend">
         <a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
             Set Types
         </a>
@@ -134,13 +165,13 @@
                 <a class="dropdown-item" href="https://dnguy4.github.io/mb-db/sets/master.html">Master</a>
             </li>
             <li>
-                <a class="dropdown-item" href="https://dnguy4.github.io/mb-db/sets/bronze-promo.html">Bronze Promo</a>
+                <a class="dropdown-item" href="https://dnguy4.github.io/mb-db/sets/bronze_promo.html">Bronze Promo</a>
             </li>
             <li>
-                <a class="dropdown-item" href="https://dnguy4.github.io/mb-db/sets/silver-promo.html">Silver Promo</a>
+                <a class="dropdown-item" href="https://dnguy4.github.io/mb-db/sets/silver_promo.html">Silver Promo</a>
             </li>
             <li>
-                <a class="dropdown-item" href="https://dnguy4.github.io/mb-db/sets/gold-promo.html">Gold Promo</a>
+                <a class="dropdown-item" href="https://dnguy4.github.io/mb-db/sets/gold_promo.html">Gold Promo</a>
             </li>
             <li>
                 <a class="dropdown-item" href="https://dnguy4.github.io/mb-db/sets/meta.html">Meta</a>
@@ -149,19 +180,19 @@
                 <a class="dropdown-item" href="https://dnguy4.github.io/mb-db/sets/npc.html">NPC</a>
             </li>
             <li>
-                <a class="dropdown-item" href="https://dnguy4.github.io/mb-db/sets/pro-player.html">Pro Player</a>
+                <a class="dropdown-item" href="https://dnguy4.github.io/mb-db/sets/pro_player.html">Pro Player</a>
             </li>
             <li>
                 <a class="dropdown-item" href="https://dnguy4.github.io/mb-db/sets/character.html">Character</a>
             </li>
             <li>
-                <a class="dropdown-item" href="https://dnguy4.github.io/mb-db/sets/character-(co-op).html">Character (Co-Op)</a>
+                <a class="dropdown-item" href="https://dnguy4.github.io/mb-db/sets/character_(co-op).html">Character (Co-Op)</a>
             </li>
             <li>
-                <a class="dropdown-item" href="https://dnguy4.github.io/mb-db/sets/character-expansion.html">Character Expansion</a>
+                <a class="dropdown-item" href="https://dnguy4.github.io/mb-db/sets/character_expansion.html">Character Expansion</a>
             </li>
             <li>
-                <a class="dropdown-item" href="https://dnguy4.github.io/mb-db/sets/co-op-boss.html">Co-Op Boss</a>
+                <a class="dropdown-item" href="https://dnguy4.github.io/mb-db/sets/co-op_boss.html">Co-Op Boss</a>
             </li>
             <li>
                 <a class="dropdown-item" href="https://dnguy4.github.io/mb-db/sets/event.html">Event</a>
@@ -170,11 +201,11 @@
     </li>
 
     <!-- categories -->
-    <li class="nav-title dropdown">
+    <li class="nav-title dropend">
         <a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
             Categories
         </a>
-        <ul class="dropdown-menu">
+        <ul class="dropdown-menu scrollable-menu">
             <li>
                 <a class="dropdown-item" href="https://dnguy4.github.io/mb-db/category/base.html">Base</a>
             </li>
@@ -234,70 +265,121 @@
 
     <!-- additional menu items from config -->
 
-</ul>        </nav>
-
+</ul>          </nav>
 <ul id="social">
             <li><a href="https://www.github.com/dnguy4/mb-db" alt="Github"><i class="icon-github"></i></a></li>
 
-</ul>      </aside>
+</ul>        </div>
+      </aside>
 
-      <div id="fh5co-main">
+      <!-- Main content -->
+      <div id="fh5co-main" class="flex-grow-1 my-3">
 
-    <div class="fh5co-narrow-content">
-    <h2 class="fh5co-heading animate-box" data-animate-effect="fadeInLeft">Recent articles</h2>
-    <div class="row row-bottom-padded-md">
-<div class="col-md-3 col-sm-6 col-padding">
-    <div class="blog-entry">
-            <a href="https://dnguy4.github.io/mb-db/cards/meta/1-star_boost.html" class="blog-img"><img src="https://dnguy4.github.io/mb-db/images/collusion/meta/1-star_boost.webp" class="img-responsive" alt="1-STAR Boost (Meta Collusion)"></a>
-        <div class="desc">
-            <h3><a href="https://dnguy4.github.io/mb-db/cards/meta/1-star_boost.html">1-STAR Boost (Meta Collusion)</a></h3>
-            <!-- <span><small>Collusion</small></span>
-            <p>METAGAME CARD | All players perform this effect. | Score: Gain 15 RP if you have a face-up 1 STAR card in your tableau (+1 STAR Tokens are included in a card's STAR).</p>
-            <a href="https://dnguy4.github.io/mb-db/cards/meta/1-star_boost.html" class="btn btn-primary">Read more <i class="icon-arrow-left3"></i></a> -->
+<div class="fh5co-narrow-content">
+    <h2 class="fh5co-heading">Millennium Blades Database</h2>
+    <h3 class="alert alert-dark mb-2 text-center">Welcome to the Millennium Blades Database!</h3>
+    <div class="container">
+        <p>
+            The Millenium Blades Database is an unofficial fan wiki about the cards from <a href="https://www.level99store.com/products/millennium-blades">Millennium Blades</a> by <a href="https://www.level99store.com/">Level 99 Games.</a>
+            This wiki includes content from the Base game and various expansions.
+        </p>
+        <p>
+            Soome images and cards might be missing. If you would like to contribute, you can leave a Github Issue <a href="">here.</a>
+        </p>
+        <h3 class="alert alert-dark mb-2 text-center">Starter Sets</h3>
+        <div class="row">
+            <div class="col-6 col-md-4 col-lg-3">
+                <h4 class="text-center"><a href="https://dnguy4.github.io/mb-db/tag/bluelake-village.html" class="text-reset text-decoration-none">Bluelake Village</a></h4>
+                <a href="https://dnguy4.github.io/mb-db/tag/bluelake-village.html">
+                    <img class="img-fluid" src="images/base/backs/bluelake_village.webp" alt="Missing Card Image" />
+                </a>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3">
+                <h4 class="text-center"><a href="https://dnguy4.github.io/mb-db/tag/brownwall-city.html" class="text-reset text-decoration-none">Brownwall City</a></h4>
+                <a href="https://dnguy4.github.io/mb-db/tag/brownwall-city.html">
+                    <img class="img-fluid" src="images/base/backs/brownwall_city.webp" alt="Missing Card Image" />
+                </a>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3">
+                <h4 class="text-center"><a href="https://dnguy4.github.io/mb-db/tag/chateau-helbane.html" class="text-reset text-decoration-none">Chateau Helbane</a></h4>
+                <a href="https://dnguy4.github.io/mb-db/tag/chateau-helbane.html">
+                    <img class="img-fluid" src="images/base/backs/chateau_helbane.webp" alt="Missing Card Image" />
+                </a>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3">
+                <h4 class="text-center"><a href="https://dnguy4.github.io/mb-db/tag/greendew-bazaar.html" class="text-reset text-decoration-none">Greendew Bazaar</a></h4>
+                <a href="https://dnguy4.github.io/mb-db/tag/greendew-bazaar.html">
+                    <img class="img-fluid" src="images/base/backs/greendew_bazaar.webp" alt="Missing Card Image" />
+                </a>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3">
+                <h4 class="text-center"><a href="https://dnguy4.github.io/mb-db/tag/redhill-mercenaries.html" class="text-reset text-decoration-none">Redhill Mercenaries</a></h4>
+                <a href="https://dnguy4.github.io/mb-db/tag/redhill-mercenaries.html">
+                    <img class="img-fluid" src="images/base/backs/redhill_mercenaries.webp" alt="Missing Card Image" />
+                </a>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3">
+                <h4 class="text-center"><a href="https://dnguy4.github.io/mb-db/tag/saints-of-whiteholme.html" class="text-reset text-decoration-none">Saints of Whiteholme</a></h4>
+                <a href="https://dnguy4.github.io/mb-db/tag/saints-of-whiteholme.html">
+                    <img class="img-fluid" src="images/base/backs/saints_of_whiteholme.webp" alt="Missing Card Image" />
+                </a>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3">
+                <h4 class="text-center"><a href="https://dnguy4.github.io/mb-db/tag/animal-farm.html" class="text-reset text-decoration-none">Animal Farm</a></h4>
+                <a href="https://dnguy4.github.io/mb-db/tag/animal-farm.html">
+                    <img class="img-fluid" src="images/base/backs/animal_farm.webp" alt="Missing Card Image" />
+                </a>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3">
+                <h4 class="text-center"><a href="https://dnguy4.github.io/mb-db/tag/future-perfect.html" class="text-reset text-decoration-none">Future Perfect</a></h4>
+                <a href="https://dnguy4.github.io/mb-db/tag/future-perfect.html">
+                    <img class="img-fluid" src="images/base/backs/future_perfect.webp" alt="Missing Card Image" />
+                </a>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3">
+                <h4 class="text-center"><a href="https://dnguy4.github.io/mb-db/tag/gods-and-myths.html" class="text-reset text-decoration-none">Gods and Myths</a></h4>
+                <a href="https://dnguy4.github.io/mb-db/tag/gods-and-myths.html">
+                    <img class="img-fluid" src="images/base/backs/gods_and_myths.webp" alt="Missing Card Image" />
+                </a>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3">
+                <h4 class="text-center"><a href="https://dnguy4.github.io/mb-db/tag/megalopolis.html" class="text-reset text-decoration-none">Megalopolis</a></h4>
+                <a href="https://dnguy4.github.io/mb-db/tag/megalopolis.html">
+                    <img class="img-fluid" src="images/base/backs/megalopolis.webp" alt="Missing Card Image" />
+                </a>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3">
+                <h4 class="text-center"><a href="https://dnguy4.github.io/mb-db/tag/the-academy.html" class="text-reset text-decoration-none">The Academy</a></h4>
+                <a href="https://dnguy4.github.io/mb-db/tag/the-academy.html">
+                    <img class="img-fluid" src="images/base/backs/the_academy.webp" alt="Missing Card Image" />
+                </a>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3">
+                <h4 class="text-center"><a href="https://dnguy4.github.io/mb-db/tag/the-great-war.html" class="text-reset text-decoration-none">The Great War</a></h4>
+                <a href="https://dnguy4.github.io/mb-db/tag/the-great-war.html">
+                    <img class="img-fluid" src="images/base/backs/the_great_war.webp" alt="Missing Card Image" />
+                </a>
+            </div>
         </div>
     </div>
-</div><div class="col-md-3 col-sm-6 col-padding">
-    <div class="blog-entry">
-            <a href="https://dnguy4.github.io/mb-db/cards/expansion/1080_no_scope.html" class="blog-img"><img src="https://dnguy4.github.io/mb-db/images/collusion/expansion/1080_no_scope.webp" class="img-responsive" alt="1080 No Scope (Expansion Collusion)"></a>
-        <div class="desc">
-            <h3><a href="https://dnguy4.github.io/mb-db/cards/expansion/1080_no_scope.html">1080 No Scope (Expansion Collusion)</a></h3>
-            <!-- <span><small>Collusion</small></span>
-            <p>DECK BOX | Action: Clash with an opponent. During this clash, your Top card has -3 STAR. If you win, gain 40 RP.</p>
-            <a href="https://dnguy4.github.io/mb-db/cards/expansion/1080_no_scope.html" class="btn btn-primary">Read more <i class="icon-arrow-left3"></i></a> -->
+</div>
+
+
+
+      </div>
+<div class="fh5co-narrow-content">
+    <div class="fh5co-footer text-left px-3">
+        <div class="mb-1">
+            <small>Unofficial wiki of Millennium Blades by &copy; 2025 Level 99 Games. All Rights Reserved. </small>
         </div>
-    </div>
-</div><div class="col-md-3 col-sm-6 col-padding">
-    <div class="blog-entry">
-            <a href="https://dnguy4.github.io/mb-db/cards/meta/2-star_boost.html" class="blog-img"><img src="https://dnguy4.github.io/mb-db/images/collusion/meta/2-star_boost.webp" class="img-responsive" alt="2-STAR Boost (Meta Collusion)"></a>
-        <div class="desc">
-            <h3><a href="https://dnguy4.github.io/mb-db/cards/meta/2-star_boost.html">2-STAR Boost (Meta Collusion)</a></h3>
-            <!-- <span><small>Collusion</small></span>
-            <p>METAGAME CARD | All players perform this effect. | Score: Gain 15 RP if you have a face-up 2 STAR card in your tableau (+1 STAR Tokens are included in a card's STAR).</p>
-            <a href="https://dnguy4.github.io/mb-db/cards/meta/2-star_boost.html" class="btn btn-primary">Read more <i class="icon-arrow-left3"></i></a> -->
+        <div class="mb-2">
+            <small>&copy; 2016 Blend Free HTML5. All Rights Reserved.</span> <span>Designed by <a href="http://freehtml5.co/" target="_blank">FreeHTML5.co</a></span>
         </div>
-    </div>
-</div><div class="col-md-3 col-sm-6 col-padding">
-    <div class="blog-entry">
-            <a href="https://dnguy4.github.io/mb-db/cards/meta/3-star_boost.html" class="blog-img"><img src="https://dnguy4.github.io/mb-db/images/collusion/meta/3-star_boost.webp" class="img-responsive" alt="3-STAR Boost (Meta Collusion)"></a>
-        <div class="desc">
-            <h3><a href="https://dnguy4.github.io/mb-db/cards/meta/3-star_boost.html">3-STAR Boost (Meta Collusion)</a></h3>
-            <!-- <span><small>Collusion</small></span>
-            <p>METAGAME CARD | All players perform this effect. | Score: Gain 15 RP if you have a face-up 3 STAR card in your tableau (+1 STAR Tokens are included in a card's STAR).</p>
-            <a href="https://dnguy4.github.io/mb-db/cards/meta/3-star_boost.html" class="btn btn-primary">Read more <i class="icon-arrow-left3"></i></a> -->
-        </div>
+        <span>Pelican Site Theme was modified from <a href="https://github.com/claudio-walser/pelican-fh5co-marble" target="_blank">Claudio Walser's marble theme</a></span></small></p>
+    
     </div>
 </div>    </div>
 
-
-
-
- <div class="fh5co-footer text-center">
-    <p><small>Unofficial wiki of Millennium Blades by &copy;Level 99 Games. All Rights Reserved. This is not affilated or endorsed by them.</small>
-    <br /><small>&copy; 2016 Blend Free HTML5. All Rights Reserved.</span> <span>Designed by <a href="http://freehtml5.co/" target="_blank">FreeHTML5.co</a></span>
-    <br /><span>Pelican Site Theme was modified from <a href="https://github.com/claudio-walser/pelican-fh5co-marble" target="_blank">Claudio Walser's marble theme</a></span></small></p>
-
-</div>      </div>
-    </div>
 
     <!-- jQuery -->
     <script src="https://dnguy4.github.io/mb-db/theme/js/jquery.min.js"></script>
@@ -305,7 +387,6 @@
     <script src="https://dnguy4.github.io/mb-db/theme/js/jquery.easing.1.3.js"></script>
     <!-- Bootstrap -->
     <script src="https://dnguy4.github.io/mb-db/theme/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" src="https://dnguy4.github.io/mb-db/theme/css/bootstrap.css"></script>
 
     <!-- Waypoints -->
     <script src="https://dnguy4.github.io/mb-db/theme/js/jquery.waypoints.min.js"></script>
@@ -315,7 +396,5 @@
 
     <!-- MAIN JS -->
     <script src="https://dnguy4.github.io/mb-db/theme/js/main.js"></script>
-
-    <!-- <script src="https://files.stork-search.net/releases/v1.5.0/stork.js"></script> -->
   </body>
 </html>

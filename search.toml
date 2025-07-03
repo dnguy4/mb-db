@@ -7,7 +7,7 @@ base_directory = "output"
 [[input.files]]
 path = "pages/about.html"
 url = "/pages/about.html"
-title = "About Millennium Blades"
+title = "About"
 
 [[input.files]]
 path = "cards/meta/1-star_boost.html"
@@ -2978,6 +2978,16 @@ title = "Hellgate Guardian Cerberus (Master Base)"
 path = "cards/premium/helping_hand.html"
 url = "/cards/premium/helping_hand.html"
 title = "Helping Hand (Premium Base)"
+
+[[input.files]]
+path = "cards/core/hemsey,_the_snitch.html"
+url = "/cards/core/hemsey,_the_snitch.html"
+title = "Hemsey, the Snitch (Core Base)"
+
+[[input.files]]
+path = "cards/starter/hemsey,_the_snitch.html"
+url = "/cards/starter/hemsey,_the_snitch.html"
+title = "Hemsey, the Snitch (Starter Base)"
 
 [[input.files]]
 path = "cards/bronze_promo/hemsey_the_stitched.html"

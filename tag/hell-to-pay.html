@@ -77,18 +77,49 @@
     />
    </head>
   <body>
-    <div id="fh5co-page">
-      <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
-      <aside id="fh5co-aside" role="complementary" class="border js-fullheight">
-        <nav class="fh5co-main-menu" role="navigation">
-        </nav>
-        <div class="clearfix"></div>
-        <h1 id="fh5co-logo">
-          <a href="https://dnguy4.github.io/mb-db/index.html">
-            <img src="https://dnguy4.github.io/mb-db/images/logo.png" />
-          </a>
-        </h1>
-        <nav class="fh5co-main-menu" role="navigation">
+    <nav class="navbar navbar-light sticky-top d-md-block">
+      <div class="container-fluid">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#fh5co-aside"
+          aria-controls="fh5co-aside"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </nav>
+    <div id="fh5co-page" class="d-flex flex-column min-vh-100">
+
+      <!-- Offcanvas sidebar -->
+      <aside
+        id="fh5co-aside"
+        class="offcanvas offcanvas-start"
+        tabindex="-1"
+        aria-labelledby="fh5co-logo"
+        role="complementary"
+      >
+        <!-- Offcanvas header only on mobile -->
+        <div class="offcanvas-header d-md-none">
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="offcanvas"
+            aria-label="Close"
+          ></button>
+        </div>
+
+        <div class="offcanvas-body sidebar-scrollable">
+          <nav class="fh5co-main-menu" role="navigation">
+          </nav>
+          <div class="clearfix"></div>
+          <h1 id="fh5co-logo">
+            <a href="https://dnguy4.github.io/mb-db/index.html">
+              <img src="https://dnguy4.github.io/mb-db/images/logo.png" />
+            </a>
+          </h1>
+          <nav class="fh5co-main-menu" role="navigation">
 <ul>
   <li>
     <div class="form-inline px-1">
@@ -110,10 +141,10 @@
     <li><a href="https://dnguy4.github.io/mb-db/">Home</a></li>
 
     <!-- page links -->
-            <li><a href="https://dnguy4.github.io/mb-db/pages/about.html">About Millennium Blades</a></li>
+            <li><a href="https://dnguy4.github.io/mb-db/pages/about.html">About</a></li>
 
     <!-- set types -->
-    <li class="nav-title dropdown">
+    <li class="nav-title dropend">
         <a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
             Set Types
         </a>
@@ -134,13 +165,13 @@
                 <a class="dropdown-item" href="https://dnguy4.github.io/mb-db/sets/master.html">Master</a>
             </li>
             <li>
-                <a class="dropdown-item" href="https://dnguy4.github.io/mb-db/sets/bronze-promo.html">Bronze Promo</a>
+                <a class="dropdown-item" href="https://dnguy4.github.io/mb-db/sets/bronze_promo.html">Bronze Promo</a>
             </li>
             <li>
-                <a class="dropdown-item" href="https://dnguy4.github.io/mb-db/sets/silver-promo.html">Silver Promo</a>
+                <a class="dropdown-item" href="https://dnguy4.github.io/mb-db/sets/silver_promo.html">Silver Promo</a>
             </li>
             <li>
-                <a class="dropdown-item" href="https://dnguy4.github.io/mb-db/sets/gold-promo.html">Gold Promo</a>
+                <a class="dropdown-item" href="https://dnguy4.github.io/mb-db/sets/gold_promo.html">Gold Promo</a>
             </li>
             <li>
                 <a class="dropdown-item" href="https://dnguy4.github.io/mb-db/sets/meta.html">Meta</a>
@@ -149,19 +180,19 @@
                 <a class="dropdown-item" href="https://dnguy4.github.io/mb-db/sets/npc.html">NPC</a>
             </li>
             <li>
-                <a class="dropdown-item" href="https://dnguy4.github.io/mb-db/sets/pro-player.html">Pro Player</a>
+                <a class="dropdown-item" href="https://dnguy4.github.io/mb-db/sets/pro_player.html">Pro Player</a>
             </li>
             <li>
                 <a class="dropdown-item" href="https://dnguy4.github.io/mb-db/sets/character.html">Character</a>
             </li>
             <li>
-                <a class="dropdown-item" href="https://dnguy4.github.io/mb-db/sets/character-(co-op).html">Character (Co-Op)</a>
+                <a class="dropdown-item" href="https://dnguy4.github.io/mb-db/sets/character_(co-op).html">Character (Co-Op)</a>
             </li>
             <li>
-                <a class="dropdown-item" href="https://dnguy4.github.io/mb-db/sets/character-expansion.html">Character Expansion</a>
+                <a class="dropdown-item" href="https://dnguy4.github.io/mb-db/sets/character_expansion.html">Character Expansion</a>
             </li>
             <li>
-                <a class="dropdown-item" href="https://dnguy4.github.io/mb-db/sets/co-op-boss.html">Co-Op Boss</a>
+                <a class="dropdown-item" href="https://dnguy4.github.io/mb-db/sets/co-op_boss.html">Co-Op Boss</a>
             </li>
             <li>
                 <a class="dropdown-item" href="https://dnguy4.github.io/mb-db/sets/event.html">Event</a>
@@ -170,11 +201,11 @@
     </li>
 
     <!-- categories -->
-    <li class="nav-title dropdown">
+    <li class="nav-title dropend">
         <a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
             Categories
         </a>
-        <ul class="dropdown-menu">
+        <ul class="dropdown-menu scrollable-menu">
             <li>
                 <a class="dropdown-item" href="https://dnguy4.github.io/mb-db/category/base.html">Base</a>
             </li>
@@ -234,14 +265,15 @@
 
     <!-- additional menu items from config -->
 
-</ul>        </nav>
-
+</ul>          </nav>
 <ul id="social">
             <li><a href="https://www.github.com/dnguy4/mb-db" alt="Github"><i class="icon-github"></i></a></li>
 
-</ul>      </aside>
+</ul>        </div>
+      </aside>
 
-      <div id="fh5co-main">
+      <!-- Main content -->
+      <div id="fh5co-main" class="flex-grow-1 my-3">
 <div class="fh5co-narrow-content">
   <h1 class="fh5co-heading-colored"><i class="icon-folder"></i> Hell to Pay</h1>
   <div class="container">
@@ -319,13 +351,20 @@
 </div>    </div>
   </div>
 </div>
- <div class="fh5co-footer text-center">
-    <p><small>Unofficial wiki of Millennium Blades by &copy;Level 99 Games. All Rights Reserved. This is not affilated or endorsed by them.</small>
-    <br /><small>&copy; 2016 Blend Free HTML5. All Rights Reserved.</span> <span>Designed by <a href="http://freehtml5.co/" target="_blank">FreeHTML5.co</a></span>
-    <br /><span>Pelican Site Theme was modified from <a href="https://github.com/claudio-walser/pelican-fh5co-marble" target="_blank">Claudio Walser's marble theme</a></span></small></p>
-
-</div>      </div>
+      </div>
+<div class="fh5co-narrow-content">
+    <div class="fh5co-footer text-left px-3">
+        <div class="mb-1">
+            <small>Unofficial wiki of Millennium Blades by &copy; 2025 Level 99 Games. All Rights Reserved. </small>
+        </div>
+        <div class="mb-2">
+            <small>&copy; 2016 Blend Free HTML5. All Rights Reserved.</span> <span>Designed by <a href="http://freehtml5.co/" target="_blank">FreeHTML5.co</a></span>
+        </div>
+        <span>Pelican Site Theme was modified from <a href="https://github.com/claudio-walser/pelican-fh5co-marble" target="_blank">Claudio Walser's marble theme</a></span></small></p>
+    
     </div>
+</div>    </div>
+
 
     <!-- jQuery -->
     <script src="https://dnguy4.github.io/mb-db/theme/js/jquery.min.js"></script>
@@ -333,7 +372,6 @@
     <script src="https://dnguy4.github.io/mb-db/theme/js/jquery.easing.1.3.js"></script>
     <!-- Bootstrap -->
     <script src="https://dnguy4.github.io/mb-db/theme/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" src="https://dnguy4.github.io/mb-db/theme/css/bootstrap.css"></script>
 
     <!-- Waypoints -->
     <script src="https://dnguy4.github.io/mb-db/theme/js/jquery.waypoints.min.js"></script>
@@ -343,7 +381,5 @@
 
     <!-- MAIN JS -->
     <script src="https://dnguy4.github.io/mb-db/theme/js/main.js"></script>
-
-    <!-- <script src="https://files.stork-search.net/releases/v1.5.0/stork.js"></script> -->
   </body>
 </html>

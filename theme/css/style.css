@@ -75,36 +75,59 @@ figure figcaption {
   background: #228896;
 }
 
+/* Always needed */
 #fh5co-page {
   width: 100%;
   overflow: hidden;
   position: relative;
 }
 
-#fh5co-aside {
-  padding-top: 60px;
-  padding-bottom: 40px;
-  width: 20%;
-  position: fixed;
-  bottom: 0;
-  top: 0;
-  left: 0;
-  overflow-y: scroll;
-  z-index: 1001;
-  -webkit-transition: 0.5s;
-  -o-transition: 0.5s;
-  transition: 0.5s;
-}
-#fh5co-aside::-webkit-scrollbar { 
-    display: none; 
-}
-
-@media screen and (max-width: 1200px) {
+/* Sidebar overrides only on large screens */
+@media (min-width: 768px) {
   #fh5co-aside {
-    width: 30%;
+    position: fixed;
+    width: 20%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1030;
+    padding-top: 60px;
+    padding-bottom: 40px;
+    transform: none !important;
+    visibility: visible !important;
+  }
+
+  #fh5co-main, .fh5co-footer {
+    margin-left: 20%;
+  }
+
+  .offcanvas-header {
+    display: none;
   }
 }
+
+
+/* Raise z-index of offcanvas */
+#fh5co-aside {
+  z-index: 1045;
+}
+
+/* Prevent clipping */
+.offcanvas-body {
+  overflow: visible;
+}
+
+
+/* #fh5co-aside::-webkit-scrollbar { 
+    display: none; 
+} */
+
 @media screen and (max-width: 768px) {
+  #fh5co-aside {
+    width: 40%;
+  }
+}
+/* @media screen and (max-width: 768px) {
   #fh5co-aside {
     width: 270px;
     -moz-transform: translateX(-270px);
@@ -113,7 +136,7 @@ figure figcaption {
     -o-transform: translateX(-270px);
     transform: translateX(-270px);
   }
-}
+} */
 #fh5co-aside #fh5co-logo {
   text-align: center;
   font-family: "Roboto", Arial, sans-serif;
@@ -153,11 +176,11 @@ figure figcaption {
   margin: 0;
   padding: 0;
 }
-@media screen and (max-width: 768px) {
+/* @media screen and (max-width: 768px) {
   #fh5co-aside .fh5co-main-menu ul {
     margin: 0 0 2em 0;
   }
-}
+} */
 #fh5co-aside .fh5co-main-menu ul li {
   margin: 0 0 20px 0;
   padding: 0;
@@ -221,27 +244,6 @@ figure figcaption {
   -o-transform: scaleX(1);
   transform: scaleX(1);
 }
-#fh5co-aside .fh5co-footer {
-  position: absolute;
-  bottom: 40px;
-  font-size: 14px;
-  text-align: center;
-  width: 100%;
-  font-weight: 400;
-  color: rgba(0, 0, 0, 0.6);
-  padding: 0 20px;
-}
-@media screen and (max-width: 768px) {
-  #fh5co-aside .fh5co-footer {
-    position: relative;
-    bottom: 0;
-  }
-}
-#fh5co-aside .fh5co-footer span {
-  display: block;
-}
-
-
 
 #fh5co-aside #social [class^="icon-"], [class*=" icon-"] {
   font-size: 2em;
@@ -285,15 +287,15 @@ figure figcaption {
     width: 100%;
   }
 }
-#fh5co-main .fh5co-narrow-content {
+.fh5co-narrow-content {
   position: relative;
   width: 93%;
   margin: 0 auto;
-  padding: 4em 0;
+  padding: 1em 0;
   clear: both;
 }
 @media screen and (max-width: 768px) {
-  #fh5co-main .fh5co-narrow-content {
+  .fh5co-narrow-content {
     width: 100%;
     padding: 4em 1em;
   }
@@ -453,7 +455,7 @@ figure figcaption {
   background: #fff;
 }
 
-body.offcanvas {
+/* body.offcanvas {
   overflow-x: hidden;
 }
 body.offcanvas #fh5co-aside {
@@ -474,7 +476,7 @@ body.offcanvas #fh5co-main, body.offcanvas .fh5co-nav-toggle {
   -ms-transform: translateX(270px);
   -o-transform: translateX(270px);
   transform: translateX(270px);
-}
+} */
 
 .fh5co-services {
   margin-top: 5px;
