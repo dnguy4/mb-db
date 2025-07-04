@@ -129,7 +129,9 @@ def make_card_pages(conn):
                 image_path = paths[0][7:] # Trim to the /images part
         if SITEURL:
             image_path = f"{SITEURL}{image_path}"
-
+        
+        image_path = image_path.replace("\"", "&quot;")
+        card_name = card_name.replace("\"", "")
         file_path = f"content/cards/{card_type}/"
         os.makedirs(file_path, exist_ok=True)
         with open(f"{file_path}/{card_name}.html", "w") as fp:
