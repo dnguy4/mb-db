@@ -1270,13 +1270,13 @@ url = "/cards/team/cutting_edge.html"
 title = "Cutting Edge (Team Collusion)"
 
 [[input.files]]
-path = "cards/premium/\"d\".html"
-url = "/cards/premium/\"d\".html"
+path = "cards/premium/d.html"
+url = "/cards/premium/d.html"
 title = "\\\"D\\\" (Premium Set Rotation)"
 
 [[input.files]]
-path = "cards/gold_promo/dagurios_\"the_man\"_ziboulotibs.html"
-url = "/cards/gold_promo/dagurios_\"the_man\"_ziboulotibs.html"
+path = "cards/gold_promo/dagurios_the_man_ziboulotibs.html"
+url = "/cards/gold_promo/dagurios_the_man_ziboulotibs.html"
 title = "Dagurios \\\"The Man\\\" Ziboulotibs (Gold Promo Base)"
 
 [[input.files]]
@@ -1880,8 +1880,8 @@ url = "/cards/expansion/duke_pongem.html"
 title = "Duke Pongem (Expansion Set Rotation)"
 
 [[input.files]]
-path = "cards/bronze_promo/dyna_\"might\"_thompson.html"
-url = "/cards/bronze_promo/dyna_\"might\"_thompson.html"
+path = "cards/bronze_promo/dyna_might_thompson.html"
+url = "/cards/bronze_promo/dyna_might_thompson.html"
 title = "Dyna \\\"Might\\\" Thompson (Bronze Promo Mini Expansion #2 (Sponsors))"
 
 [[input.files]]
@@ -2993,16 +2993,6 @@ title = "Hemsey, the Snitch (Starter Base)"
 path = "cards/bronze_promo/hemsey_the_stitched.html"
 url = "/cards/bronze_promo/hemsey_the_stitched.html"
 title = "Hemsey the Stitched (Bronze Promo Collusion)"
-
-[[input.files]]
-path = "cards/core/hensey,_the_snitch.html"
-url = "/cards/core/hensey,_the_snitch.html"
-title = "Hensey, the Snitch (Core Base)"
-
-[[input.files]]
-path = "cards/starter/hensey,_the_snitch.html"
-url = "/cards/starter/hensey,_the_snitch.html"
-title = "Hensey, the Snitch (Starter Base)"
 
 [[input.files]]
 path = "cards/gold_promo/hercules.html"
@@ -6760,8 +6750,8 @@ url = "/cards/silver_promo/thor.html"
 title = "Thor (Silver Promo Mini Expansion #7 (Crossovers 2))"
 
 [[input.files]]
-path = "cards/bronze_promo/\"three_gun\"_corey.html"
-url = "/cards/bronze_promo/\"three_gun\"_corey.html"
+path = "cards/bronze_promo/three_gun_corey.html"
+url = "/cards/bronze_promo/three_gun_corey.html"
 title = "\\\"Three Gun\\\" Corey (Bronze Promo Set Rotation)"
 
 [[input.files]]
