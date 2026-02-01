@@ -34,7 +34,7 @@ ALL_SETS_SOURCES = [
 ]
 
 
-def get_card_types(conn) -> list[str]:
+def get_card_types(conn: sq.Connection) -> list[str]:
     # rows = conn.execute(
     #     """
     #     SELECT DISTINCT card_type FROM card_list ORDER BY card_type
@@ -80,7 +80,8 @@ def pelican_transform_str(s: str) -> str:
 
 
 
-def make_set_pages(conn, card_types):
+def make_set_pages(conn: sq.Connection, card_types: list[str]):
+    """Generate the set html pages."""
     for card_type in card_types:
         rows = conn.execute(
             """
@@ -111,7 +112,8 @@ def make_set_pages(conn, card_types):
             fp.write(content)
 
 
-def make_card_pages(conn):
+def make_card_pages(conn: sq.Connection) -> None:
+    """Generate the card html pages."""
     conn.row_factory = sq.Row
     rows = conn.execute(
         """

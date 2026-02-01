@@ -6,10 +6,12 @@ from contextlib import closing
 from rapidfuzz import process, fuzz
 
 def normalize_str(s: str) -> str:
+    """Normalize descriptor strings."""
     return s.strip().lower().replace(" ", "_")
 
 
 def valid_sets() -> set[str]:
+    """Return all valid card sets."""
     with closing(sq.connect("card_list.sqlite")) as conn:
         rows = conn.execute(
             """
@@ -23,7 +25,14 @@ def valid_sets() -> set[str]:
 
 
 
-def label_images(image_dir: str, output_dir: str):
+def label_images(image_dir: str, output_dir: str) -> None:
+    """
+    Prompt user to rename webp files in the image directory.
+
+    Args:
+        image_dir (str): dir containing the unlabelled images.
+        output_dir (str): dir where labelled images are saved.
+    """
     src_dir = os.fsencode(image_dir)
     cv2.namedWindow("Image Viewer", cv2.WINDOW_AUTOSIZE)
     set_names = valid_sets()
@@ -83,7 +92,8 @@ def label_images(image_dir: str, output_dir: str):
     cv2.destroyAllWindows()
         
 
-def find_missing_backs(output_dir):
+def find_missing_backs(output_dir: str) -> None:
+    """Determine what sets are missing card back images."""
     src_dir = os.fsencode(output_dir)
     set_names = valid_sets()
     for file in os.listdir(src_dir):
