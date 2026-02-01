@@ -139,3 +139,7 @@ STATIC_URL = "{path_no_ext}.html"
 STORK_INPUT_OPTIONS = {"title_boost": "Large"}
 
 DIRECT_TEMPLATES = ["index", "tags", "categories"]
+
+EXTRA_PATH_METADATA = {
+    'images/favicon.ico': {'path': 'favicon.ico'}
+}
