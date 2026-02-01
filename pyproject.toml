@@ -13,5 +13,6 @@ dependencies = [
     "pelican>=4.11.0",
     "pelican-search>=1.1.0",
     "pillow>=11.2.1",
+    "rapidfuzz>=3.14.3",
     "tensorflow>=2.19.0",
 ]
