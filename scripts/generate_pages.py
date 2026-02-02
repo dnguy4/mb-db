@@ -101,6 +101,8 @@ def make_set_pages(conn: sq.Connection, card_types: list[str]):
                 image_path = f"/images/backs/{normalized}.webp"
             else:
                 image_path = "/images/missing.webp"
+            if SITEURL:
+                image_path = f"{SITEURL}{image_path}"
             set_dict[source].append((set_name, set_link, image_path))
 
         if card_type == "Core":
