@@ -2,7 +2,7 @@ import pandas as pd
 import sqlite3 as sq
 
 
-def excel_to_json(excel_path, sheet_name):
+def excel_to_json(excel_path: str, sheet_name: str):
     """
     Convert an Excel sheet to JSON format.
 
@@ -57,12 +57,13 @@ def excel_to_json(excel_path, sheet_name):
         return None
 
 
-# Example usage
-excel_path = "mb.xlsx"
-sheet_name = "Master List"
+if __name__ == "__main__":
+    # Example usage
+    excel_path = "mb.xlsx"
+    sheet_name = "Master List"
 
-json_data = excel_to_json(excel_path, sheet_name)
-if json_data:
-    with open("card_list.json", "w") as f:
-        f.write(json_data)
-        # json.dump(json_data, fp=f)
+    json_data = excel_to_json(excel_path, sheet_name)
+    if json_data:
+        with open("card_list.json", "w") as f:
+            f.write(json_data)
+            # json.dump(json_data, fp=f)

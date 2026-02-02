@@ -34,7 +34,7 @@ ALL_SETS_SOURCES = [
 ]
 
 
-def get_card_types(conn) -> list[str]:
+def get_card_types(conn: sq.Connection) -> list[str]:
     # rows = conn.execute(
     #     """
     #     SELECT DISTINCT card_type FROM card_list ORDER BY card_type
@@ -76,28 +76,37 @@ def normalize_str(s: str) -> str:
 
 def pelican_transform_str(s: str) -> str:
     """Transform url strings the same way Pelican does."""
-    return s.lower().replace(" ", "-").replace("#","").replace("(", "").replace(")", "").rstrip(".")
+    return s.lower().replace(" ", "-").replace("#","").replace("(", "").replace(")", "").rstrip(".!")
 
 
 
-def make_set_pages(conn, card_types):
+def make_set_pages(conn: sq.Connection, card_types: list[str]):
+    """Generate the set html pages."""
     for card_type in card_types:
         rows = conn.execute(
             """
-            SELECT DISTINCT source, divider 
+            SELECT DISTINCT source, "set" 
             FROM card_list
             WHERE card_type = ?
-            ORDER BY source, divider
+            ORDER BY source, "set"
             """,
             [card_type],
         ).fetchall()
 
         set_dict = defaultdict(list)
         for source, set_name in rows:
-            set_normalized = pelican_transform_str(set_name)
-            set_dict[source].append((set_name, set_normalized))
+            set_link = pelican_transform_str(set_name)
+            normalized = normalize_str(set_name)
+            if os.path.exists(f"content/images/backs/{normalized}.webp"):
+                image_path = f"/images/backs/{normalized}.webp"
+            else:
+                image_path = "/images/missing.webp"
+            if SITEURL:
+                image_path = f"{SITEURL}{image_path}"
+            set_dict[source].append((set_name, set_link, image_path))
 
         if card_type == "Core":
+            # Better annotate the core sets
             set_dict = {"Core Sets:": set_dict["Base"]}
         sets = list(set_dict.items())
         content = set_template.render(set_dict=sets, card_type=card_type, SITEURL=SITEURL)
@@ -105,7 +114,8 @@ def make_set_pages(conn, card_types):
             fp.write(content)
 
 
-def make_card_pages(conn):
+def make_card_pages(conn: sq.Connection) -> None:
+    """Generate the card html pages."""
     conn.row_factory = sq.Row
     rows = conn.execute(
         """
@@ -127,6 +137,8 @@ def make_card_pages(conn):
                 paths = glob.glob(f"content/images/**/**/{card_name}.webp")
             if paths:
                 image_path = paths[0][7:] # Trim to the /images part
+            else:
+                image_path = "/images/missing.webp"
         if SITEURL:
             image_path = f"{SITEURL}{image_path}"
         

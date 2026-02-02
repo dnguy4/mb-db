@@ -18,7 +18,9 @@ After extracting the image assets, I used `scripts/batch_test.py` to match the c
 
 I was originally planning on making this an actual wiki, but that would cost money and require moderation. I decided to host a static website on Github Pages instead, since that would be free.
 
-Jekyll was considered for generating this website. due to my greater expertise with Python, I settled on using [Pelican](https://getpelican.com/) + [Jinja](https://jinja.palletsprojects.com/en/stable/). Pelaican was a bit tricky to wrap my head around at first, especially with how I wasn't making a blog. I abused the definition of static pages and ended up writing custom HTML instead of markdown. `scripts/generate_pages` was used to generate most of the site pages. These pages were kept outside the content/pages directory in order to not display them on the sidebar of the website along with the about page. THanks to pelicanconf.py letting me define variables for Jinja to use, generating the pages was simple enough.
+Jekyll was considered for generating this website. due to my greater expertise with Python, I settled on using [Pelican](https://getpelican.com/) + [Jinja](https://jinja.palletsprojects.com/en/stable/). Pelican was a bit tricky to wrap my head around at first, especially with how I wasn't making a blog. I abused the definition of static pages and ended up writing custom HTML instead of markdown. `scripts/generate_pages` was used to generate most of the site pages.
+
+These static pages were kept outside the content/pages directory in order to not display them on the sidebar of the website along with the about page, as that's the default behavior on Pelican. Since `pelicanconf.py` lets me define variables for Jinja to use, generating the pages was simple enough.
 
 For my theme, I used the [pelican-fh5co-marble](https://github.com/claudio-walser/pelican-fh5co-marble) theme by [claudio-walser](https://github.com/claudio-walser) as the starting point. I updated the theme to use bootstrap 5 and less custom javascript/css. I'm quite happy with how it responsive it is for the amount of effort I put in.
 

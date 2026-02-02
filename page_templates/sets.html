@@ -12,21 +12,17 @@
       {% if value|length > 0 %}
       <div>
         <h1>{{ source }}</h1>
-        {% for set, set_normalized in value %}
-        <a
-          href="{{ SITEURL }}/tag/{{ set_normalized }}.html"
-          class="overview-link col-md-6"
-        >
-          <div class="wrapper">
-            <div class="fh5co-feature">
-              <div class="fh5co-text">
-                <h3>{{ set }}</h3>
-              </div>
-            </div>
-            <div class="clearfix"></div>
+        <div class="row">
+          {% for set, set_link, image_path in value %}
+          <div class="col-6 col-md-4 col-lg-3">
+              <h4 class="text-center">
+              <a href="{{SITEURL}}/tag/{{set_link}}.html" class="text-reset text-decoration-none">{{set}}</a></h4>
+              <a href="{{SITEURL}}/tag/{{set_link}}.html">
+                  <img class="img-fluid" src="{{image_path}}" alt="{{set}}"/>
+              </a>
           </div>
-        </a>
-        {% endfor %}
+          {% endfor %}
+        </div>
       </div>
       {% endif %}
       {% endfor %}
